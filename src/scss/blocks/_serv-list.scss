@@ -1,0 +1,115 @@
+.serv-list {
+    position: relative;
+
+    transition: opacity 1s;
+
+    opacity: 0;
+    max-height: 0;
+
+    &.active {
+        padding-top: 38px;
+        padding-bottom: 50px;
+        max-height: unset;
+        opacity: 1;
+    }
+
+    overflow: hidden;
+
+    &__content {
+        margin-top: 52px;
+    }
+    &__grid {
+        width: 50%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 262px);
+        grid-auto-rows: minmax(269px, auto);
+        justify-content: space-evenly;
+        column-gap: 20px;
+        row-gap: 35px;
+    }
+    &__card {
+        padding: 34px 15px 30px 30px;   
+
+        background: #2F2E24;
+        background: linear-gradient(214.37deg, #302E24 9.6%, #2F2E24 108.65%);
+        box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.28);
+        border-radius: 35px 3px;
+        cursor: pointer;
+
+        transition: all 0.5s;
+
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #95803D;
+            background: linear-gradient(120.09deg, #95803D 2.42%, #564715 107.07%), linear-gradient(214.37deg, #302E24 9.6%, #2F2E24 108.65%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.25s linear;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    &__num {
+        padding-bottom: 8px;
+        position: relative;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+
+        color: rgba(252, 255, 213, 0.21);
+
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgb(252,255,212);
+            background: linear-gradient(90deg, rgba(252,255,212,1) 0%, rgba(106,89,34,0) 70%);
+        }
+    }
+    &__name {
+        margin-top: 13px;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+
+        color: #F2F2F2;
+    }
+    &__descr {
+        margin-top: 19px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+}

@@ -1,0 +1,12 @@
+.socials {
+    &__icon {
+        g {
+            transition: all .5s;
+        }
+        &:hover {
+            g {
+                opacity: 1;
+            }
+        }
+    }
+}

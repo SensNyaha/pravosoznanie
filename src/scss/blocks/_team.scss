@@ -1,0 +1,205 @@
+.team {
+    padding-top: 81px;
+
+    background: #181616;
+    background: linear-gradient(107.42deg, #181616 -4.1%, #1B1A17 91.06%);
+    overflow: hidden;
+    position: relative;
+
+    &__content {
+        margin-top: 20px;
+
+        display: flex;
+        align-items:flex-start;
+    }
+    &__guys {
+        margin-left: 33px;
+
+        position: relative;
+    }
+    &__info {
+        position: absolute;
+        top: 80px;
+        width: max-content;
+        &_left {
+            left: 0;
+        }
+        &_right {
+            left: 600px;
+        }
+    }
+    &__photo {
+        position: relative;
+        top: 55px;
+    }
+    &__name {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    &__job {
+        margin-top: 2px;
+        padding-left: 11px;
+        position: relative;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+
+        color: #FFFFFF;
+
+        opacity: 0.5;
+
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 100%;
+            background: #FCFFD5;
+        }
+    }
+    &__socials {
+        margin-top: 18px;
+        
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    &__benefits {
+        margin-top: 280px;
+        margin-left: auto;
+        padding-bottom: 120px;
+
+        display: grid;
+        grid-template-columns: repeat(3, 149px);
+        justify-content: space-between;
+        column-gap: 36px;
+        row-gap: 70px;
+    }
+    &__benefit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 17px;
+
+        text-align: center;
+
+        &-img {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            min-height: 60px;
+
+            img {
+                width: auto;
+            }
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+
+            color: #FFFFFF;
+        }
+    }
+    &__disc {
+        position: absolute;
+        top: 489px;
+        left: -325px;
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .team {
+        &__photo {
+            width: 420px;
+            top: 120px;
+        }
+        &__info {
+            &_right {
+                left: 380px;
+            }
+        }
+        &__benefits {
+            margin-top: 200px;
+            column-gap: 15px;
+            row-gap: 40px;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .team {
+        &__guys {
+            width: 100%;
+            margin-left: 0;
+
+            display: flex;
+            justify-content: center;
+        }
+        &__info {
+            &_right {
+                left: 100%;
+                transform: translateX(-100%);
+            }
+        }
+        &__photo {
+            width: 360px;
+        }
+        &__benefits {
+            display: none;
+        }
+        &__disc {
+            width: 613px;
+            top: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__name {
+            font-size: 16px;
+            line-height: 21px;
+        }
+        &__socials { 
+            margin-top: 15px;
+        }
+        &__content {
+            margin-top: 0;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .team {
+        padding-top: 64px;
+        &__info {
+            top: 30px;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .team {
+        &__photo {
+            width: 280px;
+            top: 120px;
+        }
+        &__disc {
+            width: 500px;
+            max-width: unset;
+            top: 150px;
+        }
+        &__name {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        &__job {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &__socials {
+            margin-top: 7px;
+        }
+    }
+}

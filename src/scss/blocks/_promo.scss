@@ -1,0 +1,119 @@
+.promo {
+    max-width: 380px;
+
+    &__title {
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 66px;
+
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    }
+    &__clickables {
+        margin-top: 40px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+
+        color: #FFFFFF;
+
+        background: transparent;
+        border: none;
+
+        svg {
+            opacity: 0.5;
+            transition: all 0.5s;
+        }
+
+        &-text {
+            padding-bottom: 7px;
+            position: relative;
+
+            opacity: 0.6;
+            transition: all 0.5s;
+
+            &:after {
+                position: absolute;
+                content: '';
+                bottom:0;
+                left: 0;
+                right: 0;
+                height: 1px;
+
+                opacity: 0.5;
+                background: rgb(56,57,33);
+                background: linear-gradient(103deg, rgba(252,255,212,1) 0%, rgba(56,57,33,1) 100%);
+            }
+        }
+
+
+        &:hover {
+            .promo__btn-text {
+                opacity: 1;
+                text-shadow: 0px 0px 5px rgba(252, 255, 212, 0.82);
+
+                &:after {
+                    box-shadow: 0px 0px 6px rgba(252, 255, 212, 0.4);
+                }
+            }
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .promo {
+        max-width: unset;
+        &__title {
+            font-size: 42px;
+            line-height: 48px;
+        }
+        &__btn {
+            display: none;
+            &:first-child {
+                display: flex;
+
+                border: 1px solid #FFFFFF;
+                filter: drop-shadow(0px 0px 26px rgba(149, 127, 61, 0.68));
+                border-radius: 3px;
+                padding: 18px;
+            }
+
+            &-text {
+                padding-bottom: 0;
+                
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+
+                color: #FFFFFF;
+                opacity: 1;
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        &__svg {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 350px) {
+    .promo {
+        &__title {
+            word-break: break-all;
+        }
+    }
+}

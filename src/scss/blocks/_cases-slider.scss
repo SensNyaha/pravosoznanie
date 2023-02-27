@@ -1,0 +1,111 @@
+.cases-slider {
+    padding-top: 66px;
+    padding-bottom: 66px;
+
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    &__slider {
+        margin-top: 50px;
+        overflow-x: clip;
+    }
+    &__card {
+        padding: 41px 14px 41px 39px;
+
+        background: #282523;
+        background: linear-gradient(50.83deg, #282523 -1.4%, #2F2C29 102.27%);
+        box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.28);
+        border-radius: 35px 3px;
+
+        cursor: default;
+    }
+    &__name {
+        padding-right: 24px;
+        padding-bottom: 11px;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+
+        color: #F2F2F2;
+
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+            background: #fcffd4;
+            background: linear-gradient(90deg, rgb(252, 255, 212) 0%, rgba(106, 89, 34, 0) 70%);
+        }
+    }
+    &__deal {
+        margin-top: 12px;
+
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 13px;
+        color: rgba(255, 255, 255, .4);
+    }
+    &__subtitle {
+        margin-top: 15px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #F2F2F2;
+    }
+    &__text {
+        margin-top: 5px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: rgba(255, 255, 255, .4);
+    }
+    &__controls {
+        text-align: right;
+    }
+    &__next, &__prev {
+        margin-top: 44px;
+        margin-left: auto;
+
+        background:transparent;
+        border: none;
+
+        g {
+            transition: all 0.5s;
+        }
+        &:hover {
+            g {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cases-slider {
+        &__card {
+            padding-left: 30px;
+        }
+    }
+}

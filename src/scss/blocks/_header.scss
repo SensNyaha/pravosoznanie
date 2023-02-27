@@ -1,0 +1,189 @@
+.header {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+
+        &:hover {
+            color: inherit
+        }
+
+        // cursor: default;
+    }
+    &__span {
+        color: #494411;
+        font-weight: 700;
+
+        padding: 6px;
+        border-radius: 12px 0;
+
+        background: #FCFFD4;
+
+        .about & {
+            background: #423805;
+            color: #F4F3EE;
+        }
+    }
+    &__address {
+        margin-left: 35px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    &__nav {
+        margin-left: auto;
+    }
+    &__contacts {
+        margin-left: 40px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &__phone {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+
+        transition: all 0.5s;
+        &:hover {
+            color: #FCFFD5;
+            opacity: 0.6;
+        }
+
+        .about & {
+            &:hover {
+                color:#BEA000;
+                opacity: 1;
+            }
+        }
+    }
+    &__mail {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 17px;
+
+        opacity: 0.3;
+        transition: all 0.5s;
+        &:hover {
+            color: #FCFFD5;
+            opacity: 1;
+        }
+
+        .about & {
+            &:hover {
+                color: #423805;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        &__address {
+            display: none;
+        }
+        &__contacts {
+            gap: 11px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+        &.menuOpened {
+            .header__nav {
+                left: 0;
+                // transform: translateX(0);
+            }
+            .header__contacts {
+                right: 50%;
+            }
+            .header__burger {
+                z-index: 99;
+            }
+            .header__line {
+                opacity: 0;
+                &:first-child {
+                    transform: translateY(10px) rotateZ(45deg);
+                    opacity: 1;
+                }
+                &:last-child {
+                    transform: translateY(-10px) rotateZ(-45deg);
+                    opacity: 1;
+                }
+            }
+        }
+        &__contacts {
+            position: fixed;
+            // padding-left: 10px;
+            margin-left: 0;
+            bottom: 30px;
+            right: -100vw;
+            transform: translateX(50%);
+            width: 100vw;
+            z-index: 99;
+
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 35px;
+            row-gap: 15px;
+
+            transition: all 1s;
+            text-align: center;
+        }
+        &__nav {
+            position: fixed;
+            top: 0;
+            // transform: translateX(100vh);
+            left: 100vw;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99;
+
+            display: flex;
+            justify-content: center;
+            align-items:center;
+
+            background-color: rgba(0, 0, 0, 0.915);
+            transition: all 1s;
+        }
+        &__burger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        &__line {
+            display: block;
+            width: 30px;
+            height: 5px;
+            background: #FCFFD5;
+            border-radius: 2px;
+            transition: all 0.5s;
+
+            .about & {
+                background-color:#423805;
+            }
+        }
+        &__mail, &__phone {
+            .about & {
+                color: #FCFFD5;
+
+                &:hover {
+                    color: #FCFFD5;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
